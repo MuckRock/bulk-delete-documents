@@ -5,4 +5,4 @@
 
 # DocumentCloud Mass Delete Documents Add-On
 
-This document will go through a query of documents and delete them all. 
+This document will go through a query of documents and delete them all. Please exercise great caution, as this is not reversible. 
