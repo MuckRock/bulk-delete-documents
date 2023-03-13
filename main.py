@@ -5,6 +5,8 @@ class BulkDelete(SoftTimeOutAddOn):
         if confirm is not None and confirm is True:
             for document in self.get_documents():
                 document.delete()
+        else: 
+            self.set_message("You did not confirm, this Add-On did nothing.")
 
 if __name__ == "__main__":
     BulkDelete().main()
