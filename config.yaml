@@ -3,5 +3,8 @@ description: This is an Add-On that deletes large batches of documents. Use with
 type: object
 documents:
   - query
-properties: {}
+properties:
+  confirm:
+    title: Please select this box to confirm you want to irreversibly delete these documents.
+    type: boolean
 version: 2
