@@ -5,6 +5,6 @@ documents:
   - query
 properties:
   confirm:
-    title: Please select this box to confirm you want to irreversibly delete these documents.
+    title: Please select this box to confirm you want to irreversibly delete these documents
     type: boolean
 version: 2
