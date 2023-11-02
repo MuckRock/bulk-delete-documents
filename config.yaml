@@ -1,5 +1,6 @@
 title: Bulk Delete Documents
 description: This is an Add-On that deletes large batches of documents. Use with great caution as it is irreversible. 
+instructions: ''
 type: object
 documents:
   - query
