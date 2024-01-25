@@ -14,7 +14,10 @@ class BulkDelete(SoftTimeOutAddOn):
                 try:
                     document.delete()
                 except APIError: # If user does not have permissions to delete the document, skip.
-                    pass
+                    self.set_message(
+                        "Could not delete some documents due to insufficient permissions." 
+                        "You can only delete documents you own."
+                    )
         else:
             self.set_message("You did not confirm, this Add-On did nothing.")
 
