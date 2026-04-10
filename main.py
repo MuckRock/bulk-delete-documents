@@ -1,21 +1,27 @@
-""" Requires SoftTimeOutAddOn and APIError from python-documentcloud """
+"""Requires SoftTimeOutAddOn and APIError from python-documentcloud"""
+
+import time
 from documentcloud.addon import SoftTimeOutAddOn
 from documentcloud.exceptions import APIError
 
 
 class BulkDelete(SoftTimeOutAddOn):
-    """ DocumentCloud Add-On to bulk delete documents"""
+    """DocumentCloud Add-On to bulk delete documents"""
+
     def main(self):
-        """ Checks that the user confirmed 
+        """Checks that the user confirmed
         and then deletes the documents that they are authorized to delete."""
         confirm = self.data.get("confirm")
         if confirm is not None and confirm is True:
             for document in self.get_documents():
                 try:
                     document.delete()
-                except APIError: # If user does not have permissions to delete the document, skip.
+                    time.sleep(5)
+                except (
+                    APIError
+                ):  # If user does not have permissions to delete the document, skip.
                     self.set_message(
-                        "Could not delete some documents due to insufficient permissions." 
+                        "Could not delete some documents due to insufficient permissions."
                         "You can only delete documents you own."
                     )
         else:
