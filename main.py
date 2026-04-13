@@ -11,6 +11,7 @@ class BulkDelete(SoftTimeOutAddOn):
     def main(self):
         """Checks that the user confirmed
         and then deletes the documents that they are authorized to delete."""
+        self.client.session.headers.update({'User-Agent': 'Bulk Delete Documents Add-On'})
         confirm = self.data.get("confirm")
         if confirm is not None and confirm is True:
             for document in self.get_documents():
