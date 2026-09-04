@@ -17,7 +17,7 @@ class BulkDelete(SoftTimeOutAddOn):
             for document in self.get_documents():
                 try:
                     document.delete()
-                    time.sleep(5)
+                    time.sleep(3)
                 except (
                     APIError
                 ):  # If user does not have permissions to delete the document, skip.
